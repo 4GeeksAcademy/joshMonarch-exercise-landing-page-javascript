@@ -1,0 +1,531 @@
+body::-webkit-scrollbar {
+  display: none;
+}
+
+html {
+    font-size: 12px;
+}
+
+body {
+    background-color: black;
+    color: white;
+    font: 12px 'MedievalSharp';
+}
+
+.wrapper,
+.countdown,
+.art-wrapper,
+.art:nth-child(n-1),
+.testimonials,
+.testimonial {
+    display: flex;
+}
+
+section > h2 {
+    position: relative;
+    top: 10px;
+    padding-bottom: 20px;
+    text-align: center;
+    letter-spacing: 6px;
+    font-family: 'Metamorphous';
+}
+
+section > h2::before {
+	content: '~';
+	margin-right: 0.6em;
+	color: white;
+}
+
+section > h2::after {
+	content: '~';
+	margin-left: 0.6em;
+	color: white;
+}
+
+.wrapper {
+    position: relative;
+    width: 100vw;
+    height: 100%;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+section {
+    position: inherit;
+    height: 100vh;
+    width: inherit;
+    padding: 0 10px 0 10px;
+    background-color: inherit;
+}
+
+.hero > h1 {
+    position: inherit;
+    font: 4em 'Metamorphous';
+    width: 95%;
+    margin-left: 2.5%;
+    border-bottom: 2px solid;
+    border-image: linear-gradient(to right, transparent 5%, white, transparent 65%) 1;
+    padding-left: 15%;
+}
+
+.hero > video {
+    position: inherit;
+    top: 5vh;
+    left: 11vw;
+    height: 50%;
+    width: 50%;
+    background-color: inherit;
+}
+
+.countdown {
+    position: inherit;
+    top: 10vh;
+    width: 100vw;
+    height: 20%;
+    justify-content: space-evenly;
+}
+
+.countdown > span {
+    cursor: context-menu;
+    position: inherit;
+    display: inline-block;
+    padding-top: 20px;
+    width: 20%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    text-align: center;
+    font-size: 6em;
+}
+
+.art-wrapper {
+    height: inherit;
+    gap: 10px;
+    align-items: start;
+}
+
+.art {
+    position: relative;
+    width: 100%;
+    height: 80%;
+}
+
+.art > .art-title {
+    text-align: center;
+    display: block;
+    justify-self: center;
+
+}
+
+.art:first-child() > .art-title {
+    text-align: center;
+    justify-self: center;
+    height: 100%;
+
+}
+
+.art:nth-child(n + 1) {
+    height: 80%;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.art:nth-child(1) > div {
+    position: relative;
+    width: 40%; height: 30%;
+    box-shadow: inset 0px 0px 10px 16px black;    
+    transition: 
+        transform 0.6s cubic-bezier(.25,.8,.25,1), 
+        box-shadow 0.4s,
+        border-radius 0.4s;
+    transition-delay: 250ms;
+    transform: perspective(600px) rotateX(0deg) translateY(0);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+}
+
+.art:nth-child(2) {
+    display: grid;
+    grid-template: 0.2fr 1fr 1fr / 1fr  1fr ;
+    grid-template-areas:
+        "header header "
+        "fire   thunder"
+        "water  earth  ";
+    align-content: center;
+    justify-items: center;
+    gap: 6px;
+}
+
+.art:nth-child(2) > div {
+    position: relative;
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    box-shadow: inset 0px 0px 10px 10px #000000;
+    transition: 
+        transform 0.6s cubic-bezier(.25,.8,.25,1), 
+        box-shadow 0.4s;   
+    transition-delay: 250ms;
+    transform: perspective(600px) rotateX(0deg) translateY(0);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.art:nth-child(3) > div {
+    position: relative;
+    width: 40%; height: 30%;
+    box-shadow: inset 0px 0px 10px 16px #000000;
+    transition: 
+        transform 0.6s cubic-bezier(.25,.8,.25,1), 
+        box-shadow 0.4s,
+        border-radius 0.4s;    
+    transition-delay: 250ms;
+    transform: perspective(600px) rotateX(0deg) translateY(0);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.mage {
+    background-image: url("./img/mage.jpg");
+
+}
+
+.sorceress {
+    background-image: url("./img/sorceress.png");
+}
+
+.witch {
+    background-image: url("./img/witch.png");
+}
+
+.art:nth-child(2) > h3 {
+    grid-area: header;
+}
+
+.fire {
+    grid-area: fire;
+    background-image: url("./img/fire-power.png");
+}
+
+.thunder {
+    grid-area: thunder;
+    background-image: url("./img/thunder-power.png");
+}
+
+.water {
+    grid-area: water;
+    background-image: url("./img/water-power.png");
+}
+
+.earth {
+    grid-area: earth;
+    background-image: url("./img/earth-power.png");
+}
+
+.castle {
+    grid-area: ice;
+    background-image: url("./img/castle-map.png");
+}
+
+.forest {
+    grid-area: ice;
+    background-image: url("./img/forest-map.png");
+}
+
+.dungeon {
+    grid-area: ice;
+    background-image: url("./img/dungeon-map.png");
+}
+
+.art:nth-child(1) > div:hover,
+.art:nth-child(2) > div:hover,
+.art:nth-child(3) > div:hover{
+    z-index: 1;
+    box-shadow: inset 0px 0px 10px 16px #000000
+}
+
+.art:nth-child(1) > .mage:hover {
+    transform: 
+        perspective(600px) 
+        rotateY(20deg) 
+        translateY(120px) 
+        scale(2.5);
+}
+
+.art:nth-child(1) > .sorceress:hover {
+    transform: 
+        perspective(600px) 
+        rotateY(20deg) 
+        scale(2.5);
+}
+
+.art:nth-child(1)  .witch:hover {
+    transform: 
+        perspective(600px) 
+        rotateY(20deg) 
+        translateY(-120px) 
+        scale(2.5);
+}
+
+.art:nth-child(2)  .fire:hover {
+    transform: perspective(600px) rotateY(20deg) translateY(120px) scale(2);
+}
+.art:nth-child(2)  .thunder:hover {
+    transform: perspective(600px) rotateY(-20deg) translateY(120px) scale(2);
+}
+.art:nth-child(2)  .water:hover {
+    transform: perspective(600px) rotateY(20deg) translateY(-120px) scale(2);
+}
+.art:nth-child(2)  .earth:hover {
+    transform: perspective(600px) rotateY(-20deg) translateY(-120px) scale(2);
+}
+
+.art:nth-child(3) > .castle:hover {
+    transform: perspective(600px) rotateY(-20deg) translateY(120px) scale(2);
+}
+
+.art:nth-child(3) > .forest:hover {
+    transform: perspective(600px) rotateY(-20deg) scale(2);
+}
+
+.art:nth-child(3)  .dungeon:hover {
+    transform: perspective(600px) rotateY(-20deg) translateY(-120px) scale(2);
+}
+
+.nominations > h2 {
+    position: relative;
+    text-align: center;
+}
+
+.nominations > .awards-grid {
+    position: relative;
+    height: 90%;
+    display: grid;
+    grid-template: 1fr 1fr 1fr / 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.award {
+    position: relative;
+}
+
+.award, 
+.award > * {
+    border-radius: 6px;
+} 
+
+.card {
+    position: relative;
+    display: block;
+    width: 100%; height: 100%;
+    perspective: 1000px;
+    background-color: transparent;
+}
+
+.front,
+.back {
+    position: absolute;
+    width: 100%; height: 100%;
+    backdrop-filter: blur(5px);
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transition: ease-in-out 0.6s;
+}
+
+.front {
+    background-image: url('./img/trophy.png');
+    filter: grayscale(80%);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.back {
+    color: white;
+    text-align: center;
+    font-size: 3em;
+    padding-top: 20px;
+    transform: rotateY(-180deg);
+}
+
+.card:hover .front {
+  transform: rotateY(180deg);
+}
+
+.card:hover .back {
+  transform: rotateY(0deg);
+}
+
+.award:nth-child(2),
+.award:nth-child(5),
+.award:nth-child(8) {
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-image: linear-gradient(to bottom, #000000, #ffffff, #000000) 1 100%;
+}
+
+.testimonials {
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+
+.testimonial {
+    width: 80%;
+    align-items: center;
+    gap: 10px;
+}
+
+.testimonial:nth-child(2n){
+    flex-direction: row-reverse;
+    text-align: right;
+    align-self: end;
+}
+
+.testimonial > img {
+    position: relative;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+
+
+
+.comment {
+    width: 60%;
+    padding: 5px;
+    display: block;
+    font: 1em 'Eagle Lake';
+    flex-grow: 2;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+}
+
+form {
+    position: absolute;
+    width: 70%;
+    height: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    anchor-name: --my-anchor;
+    border: thin solid white;
+}
+
+label[for=email]{
+    position: relative;
+    top: 10%;
+    display: block;
+    text-align: center;
+    font-size: 2em;
+}
+
+input[type=email] {
+    background-color: inherit;
+    color: white;
+    border: none;
+    border-bottom: thin solid white;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+}
+
+@property --border-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes border-angle-rotate {
+  from { --border-angle: 0deg; }
+  to { --border-angle: 360deg; }
+}
+
+input:focus {
+    outline: none;
+    --border-angle: 0deg;
+    background: 
+        linear-gradient(black) padding-box,
+        conic-gradient(
+            from var(--border-angle),
+            rgba(0, 0, 0, 0) 50%,
+        white
+        )
+        border-box;
+    animation: border-angle-rotate 1s infinite linear;
+    border: 3px solid transparent;
+}
+
+
+button[type=submit]{
+    cursor: pointer;
+    position: absolute;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%);
+    width: fit-content;
+    font-size: 1.5em;
+}
+
+.trail {
+    visibility: hidden;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    left: 50%;
+    top: 60%;
+    transform: translateX(-50%);
+    background: white;
+    border-radius: 50%;
+    filter: blur(10px);
+}
+
+.contacts > span {
+    position: absolute;
+    position-anchor: --my-anchor;
+    position-area: top center;
+    margin-top: 30px;
+    font-size: 2em;
+}
+
+.contacts a {
+    text-decoration: none;
+}
+
+.particles {
+    position: absolute;
+    width: 100vw; height: 100vh;;
+}
+
+.particle {
+    position: fixed;
+    display: none;
+    top: 100vh; left: 1vw;
+    background-color: white;
+    width: 2px; height: 2px;
+    border-radius: 50%;
+    animation-name: moveParticles;
+    animation-duration: 50s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    z-index: 0;
+    filter: blur(1px);
+}
+
+@keyframes moveParticles {
+    from {
+        top: 100vh;
+    } to {
+        top: -3vh;
+    }
+}
+
+
+
